@@ -1,0 +1,28 @@
+description: >
+  Check out GitHub repository
+parameters:
+  repository:
+    type: string
+    description: Name of the repository to check out including the organization or user prefix
+  checkout_path:
+    type: string
+    description: Path to check the repo out for. If empty defaults to repository name without org or user prefix
+    default: ""
+  rewrite_with_token:
+    type: boolean
+    description: Rewrite the clone url with github token before
+    default: true
+  token_env_var:
+    default: GITHUB_TOKEN
+    description: Name of the environment variable containing the github access token
+    type: env_var_name
+steps:
+  - when:
+      condition: <<parameters.rewrite_with_token>>
+      steps:
+        - rewrite_urls_with_token:
+            token_env_var: <<parameters.token_env_var>>
+  - run:
+      name: Checkout repository <<parameters.repository>>
+      command: |
+        git clone https://github.com/<<parameters.repository>>.git <<parameters.checkout_path>>

@@ -1,0 +1,7 @@
+version: 2.1
+
+description: |
+  Utility for working with GitHub in CircleCI
+display:
+  home_url: "https://github.com/trustedshops-public/circleci-orb-github-utils"
+  source_url: "https://github.com/trustedshops-public/circleci-orb-github-utils"

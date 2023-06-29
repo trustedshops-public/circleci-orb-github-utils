@@ -1,0 +1,23 @@
+description: Checkout git repository with automatic rewrite
+usage:
+  version: 2.1
+  orbs:
+    github-utils: trustedshops-public/github-utils@<version>
+  jobs:
+    build:
+      docker:
+        - image: cimg/python:3.11
+      steps:
+        - checkout
+        - github-utils/checkout_repository:
+            token_env_var: GITHUB_TOKEN
+            rewrite_with_token: true
+            repository: my-org/my-shared-repo
+            checkout_path: build_helpers
+        # ...
+  workflows:
+    version: 2
+    continuous:
+      jobs:
+        - build
+

@@ -1,0 +1,13 @@
+description: >
+  Rewrite all GitHub urls using SSH and HTTPs with an access token provided via environment variable
+parameters:
+  token_env_var:
+    default: GITHUB_TOKEN
+    description: Name of the environment variable containing the github access token
+    type: env_var_name
+steps:
+  - run:
+      name: Rewrite git urls to use a GitHub access token
+      command: |
+        git config --global url.https://token:${<<parameters.token_env_var>>}@github.com/.insteadOf https://github.com/
+        git config --global url.https://token:${<<parameters.token_env_var>>}@github.com/.insteadOf ssh://git@github.com/

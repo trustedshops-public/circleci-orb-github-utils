@@ -1,0 +1,19 @@
+description: Rewrite urls for checkouts
+usage:
+  version: 2.1
+  orbs:
+    github-utils: trustedshops-public/github-utils@<version>
+  jobs:
+    build:
+      docker:
+        - image: cimg/python:3.11
+      steps:
+        - checkout
+        - github-utils/rewrite_urls_with_token:
+            token_env_var: GITHUB_TOKEN
+        # ...
+  workflows:
+    version: 2
+    continuous:
+      jobs:
+        - build
