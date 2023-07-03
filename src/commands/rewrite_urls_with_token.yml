@@ -9,5 +9,5 @@ steps:
   - run:
       name: Rewrite git urls to use a GitHub access token
       command: |
-        git config --global url.https://token:${<<parameters.token_env_var>>}@github.com/.insteadOf https://github.com/
+        git config --global url.https://token:${<<parameters.token_env_var>>}@github.com.insteadOf https://github.com
         git config --global url.https://token:${<<parameters.token_env_var>>}@github.com/.insteadOf ssh://git@github.com/
