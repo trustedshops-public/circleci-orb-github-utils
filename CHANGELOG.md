@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.1.0...1.1.1) (2023-07-04)
+
+
+### Bug Fixes
+
+* Fix email ([cf7f072](https://github.com/trustedshops-public/circleci-orb-github-utils/commit/cf7f07221b17f028db8aa14df8be8139eae055c5))
+
 ## [1.1.0](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.0.1...1.1.0) (2023-07-04)
 
 
