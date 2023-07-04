@@ -24,7 +24,7 @@ steps:
       name: Publish GitHub pages
       command: |
         export EMAIL="<<parameters.git_commit_author_email>>"
-        npx gh-pages@5.0.0 \
+        npx gh-pages@2.0.1 \
           -d "<<parameters.folder>>" \
           -u "<<parameters.git_commit_author_name>> <${EMAIL}>" \
           --message "<<parameters.git_commit_messages>>" \
