@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.0.1...1.1.0) (2023-07-04)
+
+
+### Features
+
+* Add publish github pages command ([69019b3](https://github.com/trustedshops-public/circleci-orb-github-utils/commit/69019b38cdc807f60f980c92c58e414638e7f8bd))
+
 ## [1.0.1](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.0.0...1.0.1) (2023-07-03)
 
 
