@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.1.1...1.1.2) (2023-07-04)
+
+
+### Bug Fixes
+
+* Downgrade gh-pages package ([6ed2abf](https://github.com/trustedshops-public/circleci-orb-github-utils/commit/6ed2abf9defdc4a546596e2c7ad7ff7bcd54400f))
+
 ## [1.1.1](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.1.0...1.1.1) (2023-07-04)
 
 
