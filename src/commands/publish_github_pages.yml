@@ -1,0 +1,30 @@
+description: >
+  Publish github pages to gh-branches page using Node.js
+parameters:
+  folder:
+    type: string
+    description: Folder to deploy
+    default: docs/
+  git_commit_author_name:
+    type: string
+    description: Author to set via git config for the commit
+  git_commit_author_email:
+    type: string
+    description: E-Mail to set via git config for the commit
+  git_commit_messages:
+    type: string
+    description: Commit message to use for git
+    default: "docs: Update github pages [ci skip]"
+  repository_url:
+    type: string
+    description: Repository url with env vars
+    default: "https://token:${GITHUB_TOKEN}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git"
+steps:
+  - run:
+      name: Publish GitHub pages
+      command: |
+        npx gh-pages@5.0.0 \
+          -d "<<parameters.folder>>" \
+          -u <<parameters.git_commit_author_name>> \<<<parameters.git_commit_author_email>>\>"" \
+          --message "<<parameters.git_commit_messages>>" \
+          --repo "<<parameters.repository_url>>"
