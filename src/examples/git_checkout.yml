@@ -20,4 +20,3 @@ usage:
     continuous:
       jobs:
         - build
-
