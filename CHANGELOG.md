@@ -1,3 +1,11 @@
+## [1.1.3](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.1.2...1.1.3) (2025-05-05)
+
+
+### Bug Fixes
+
+* linting issues not handled by pre-commit ([a70dc92](https://github.com/trustedshops-public/circleci-orb-github-utils/commit/a70dc921d7152cb1c4bbd73732955e545de4727e))
+* replace deprecated git syntax with new one ([78b0895](https://github.com/trustedshops-public/circleci-orb-github-utils/commit/78b08957f6079cf1dd604f5c67091e405e75c2c7))
+
 ## [1.1.2](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.1.1...1.1.2) (2023-07-04)
 
 
