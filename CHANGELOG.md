@@ -1,3 +1,15 @@
+## [1.2.0](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.1.3...1.2.0) (2026-05-04)
+
+
+### Features
+
+* rewrite SCP-style SSH URLs (git@github.com:) ([768a9d5](https://github.com/trustedshops-public/circleci-orb-github-utils/commit/768a9d554833d23bc03b9bcc961dcd19914a8c38))
+
+
+### Bug Fixes
+
+* error no new line character at the end of file ([4649ecf](https://github.com/trustedshops-public/circleci-orb-github-utils/commit/4649ecf1f2639226431339da7c5521e0c3c4b058))
+
 ## [1.1.3](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.1.2...1.1.3) (2025-05-05)
 
 
