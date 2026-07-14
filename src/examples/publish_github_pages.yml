@@ -1,0 +1,31 @@
+description: Publish docs folder to GitHub Pages
+usage:
+  version: 2.1
+  orbs:
+    github-utils: trustedshops-public/github-utils@<version>
+  jobs:
+    docs:
+      docker:
+        - image: cimg/node:20.12
+      steps:
+        - checkout
+        - run:
+            name: Build docs
+            command: |
+              mkdir -p docs
+              echo "Documentation generated at $(date)" > docs/index.html
+        - github-utils/publish_github_pages:
+            git_commit_author_name: CircleCI
+            git_commit_author_email: ci@example.com
+            # Optional parameters below can be overridden as needed.
+            # folder: docs/
+            # git_commit_messages: "docs: Update github pages [ci skip]"
+            # dotfiles: false
+            # nojekyll: false
+            # cname: docs.example.com
+            # repository_url: "https://token:${GITHUB_TOKEN}@github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git"
+  workflows:
+    version: 2
+    continuous:
+      jobs:
+        - docs
