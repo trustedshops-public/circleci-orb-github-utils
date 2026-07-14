@@ -71,7 +71,7 @@ jobs:
           orb-version: ${CIRCLE_TAG}
 
 workflows:
-  continious:
+  continuous:
     jobs:
       - orb-tools/lint:
           <<: *filter_all
