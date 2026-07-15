@@ -15,6 +15,18 @@ parameters:
     type: string
     description: Commit message to use for git
     default: "docs: Update github pages [ci skip]"
+  dotfiles:
+    type: boolean
+    description: Include dotfiles when publishing
+    default: false
+  nojekyll:
+    type: boolean
+    description: Add a .nojekyll file to disable Jekyll processing
+    default: false
+  cname:
+    type: string
+    description: Optional custom domain to write into CNAME
+    default: ""
   repository_url:
     type: string
     description: Repository url with env vars
@@ -24,8 +36,19 @@ steps:
       name: Publish GitHub pages
       command: |
         export EMAIL="<<parameters.git_commit_author_email>>"
-        npx gh-pages@2.0.1 \
+        set --
+        if [ "<<parameters.dotfiles>>" = "true" ]; then
+          set -- "$@" "--dotfiles"
+        fi
+        if [ "<<parameters.nojekyll>>" = "true" ]; then
+          set -- "$@" "--nojekyll"
+        fi
+        if [ -n "<<parameters.cname>>" ]; then
+          set -- "$@" "--cname" "<<parameters.cname>>"
+        fi
+        npx gh-pages@6.3.0 \
           -d "<<parameters.folder>>" \
           -u "<<parameters.git_commit_author_name>> <${EMAIL}>" \
           --message "<<parameters.git_commit_messages>>" \
-          --repo "<<parameters.repository_url>>"
+          --repo "<<parameters.repository_url>>" \
+          "$@"
