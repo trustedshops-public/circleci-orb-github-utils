@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.2.0...1.3.0) (2026-07-15)
+
+### Features
+
+* Upgrade gh-pages to 6.3.0 & add flags ([1c88bff](https://github.com/trustedshops-public/circleci-orb-github-utils/commit/1c88bfffaa9860ee695befa62eb0a8ca116656e3))
+
 ## [1.2.0](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.1.3...1.2.0) (2026-05-04)
 
 
