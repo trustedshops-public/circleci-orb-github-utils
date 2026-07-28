@@ -1,3 +1,9 @@
+## [1.3.1](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.3.0...1.3.1) (2026-07-28)
+
+### Bug Fixes
+
+* Set CACHE_DIR so publish_github_pages works without package.json ([4770b8b](https://github.com/trustedshops-public/circleci-orb-github-utils/commit/4770b8bc8aaf4f963009cd9dbde7b3f35c4b5c76)), closes [#17](https://github.com/trustedshops-public/circleci-orb-github-utils/issues/17)
+
 ## [1.3.0](https://github.com/trustedshops-public/circleci-orb-github-utils/compare/1.2.0...1.3.0) (2026-07-15)
 
 ### Features
