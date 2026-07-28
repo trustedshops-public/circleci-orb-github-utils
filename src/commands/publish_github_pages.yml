@@ -36,6 +36,13 @@ steps:
       name: Publish GitHub pages
       command: |
         export EMAIL="<<parameters.git_commit_author_email>>"
+        # gh-pages resolves its clone directory via find-cache-dir, which walks up
+        # looking for a package.json to anchor node_modules/.cache. Repos without a
+        # root package.json (Go, Python, ...) make it return undefined, and gh-pages
+        # then dies in path.join with "The path argument must be of type string.
+        # Received undefined". CACHE_DIR is find-cache-dir's escape hatch and skips
+        # that lookup entirely, so default it while honouring a caller-set value.
+        export CACHE_DIR="${CACHE_DIR:-/tmp/gh-pages-cache}"
         set --
         if [ "<<parameters.dotfiles>>" = "true" ]; then
           set -- "$@" "--dotfiles"
